@@ -14,7 +14,7 @@ ResponsiveFramework 提供了丰富的响应式组件，帮助开发者以声明
 
 让我们分析 `ResponsiveValue` 的实现：
 
-```18:48:lib/src/responsive_value.dart
+```dart 18:48:lib/src/responsive_value.dart
 class ResponsiveValue<T> {
   late T value;
   final T? defaultValue;
@@ -59,7 +59,7 @@ class ResponsiveValue<T> {
 
 `Condition` 支持四种比较类型：
 
-```138:198:lib/src/responsive_value.dart
+```dart 138:198:lib/src/responsive_value.dart
 /// Internal equality comparators.
 enum Conditional {
   LARGER_THAN,
@@ -153,7 +153,7 @@ final padding = ResponsiveValue<EdgeInsets>(
 
 `ResponsiveVisibility` 基于 `ResponsiveValue` 实现，用于根据断点显示或隐藏组件：
 
-```227:283:lib/src/responsive_value.dart
+```dart 227:283:lib/src/responsive_value.dart
 /// A convenience wrapper for responsive [Visibility].
 ///
 /// ResponsiveVisibility accepts [Condition]s in
@@ -239,7 +239,7 @@ ResponsiveVisibility(
 
 `ResponsiveConstraints` 允许根据断点设置不同的布局约束：
 
-```285:311:lib/src/responsive_value.dart
+```dart 285:311:lib/src/responsive_value.dart
 class ResponsiveConstraints extends StatelessWidget {
   final Widget child;
   final BoxConstraints? constraint;
@@ -293,7 +293,7 @@ ResponsiveConstraints(
 
 `MaxWidthBox` 是一个常用的响应式组件，用于限制内容的最大宽度并居中显示：
 
-```1:49:lib/src/max_width_box.dart
+```dart 1:49:lib/src/max_width_box.dart
 import 'package:flutter/material.dart';
 
 class MaxWidthBox extends StatelessWidget {
@@ -356,7 +356,7 @@ class MaxWidthBox extends StatelessWidget {
 
 示例项目通过扩展方法简化了 `MaxWidthBox` 的使用：
 
-```1:28:example/lib/utils/max_width_extension.dart
+```dart 1:28:example/lib/utils/max_width_extension.dart
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -400,7 +400,7 @@ extension MaxWidthExtension on List<Widget> {
 
 `ResponsiveRowColumn` 允许在行和列布局之间切换，常用于响应式布局：
 
-```26:104:lib/src/responsive_row_column.dart
+```dart 26:104:lib/src/responsive_row_column.dart
 class ResponsiveRowColumn extends StatelessWidget {
   final List<ResponsiveRowColumnItem> children;
   final ResponsiveRowColumnType layout;
@@ -448,7 +448,7 @@ class ResponsiveRowColumn extends StatelessWidget {
 
 每个子元素必须是 `ResponsiveRowColumnItem`，支持排序和 Flex 属性：
 
-```144:198:lib/src/responsive_row_column.dart
+```dart 144:198:lib/src/responsive_row_column.dart
 class ResponsiveRowColumnItem extends StatelessWidget {
   final Widget child;
   final int rowOrder;
@@ -514,7 +514,7 @@ ResponsiveRowColumn(
 
 `ResponsiveGridView` 提供了灵活的网格布局，支持固定、最大和最小尺寸：
 
-```15:234:lib/src/responsive_grid.dart
+```dart 15:234:lib/src/responsive_grid.dart
 class ResponsiveGridView extends StatelessWidget {
   // ... 属性定义
 
@@ -553,7 +553,7 @@ class ResponsiveGridView extends StatelessWidget {
 
 `ResponsiveGridDelegate` 定义了网格的布局规则：
 
-```272:377:lib/src/responsive_grid.dart
+```dart 272:377:lib/src/responsive_grid.dart
 class ResponsiveGridDelegate extends SliverGridDelegate {
   const ResponsiveGridDelegate({
     this.crossAxisExtent,
@@ -608,7 +608,7 @@ ResponsiveGridView(
 
 `ResponsiveScaledBox` 用于按比例缩放内容，常用于保持设计稿的宽高比：
 
-```5:71:lib/src/responsive_scaled_box.dart
+```dart 5:71:lib/src/responsive_scaled_box.dart
 class ResponsiveScaledBox extends StatelessWidget {
   final double? width;
   final Widget child;
@@ -697,4 +697,3 @@ class ResponsiveScaledBox extends StatelessWidget {
 ### 下一步
 
 准备好后，让我们进入第 5 章，学习如何在实际页面中使用这些组件构建响应式布局。
-

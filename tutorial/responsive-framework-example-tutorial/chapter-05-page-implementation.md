@@ -10,7 +10,7 @@
 
 `ListPage` 展示了文章列表的响应式布局：
 
-```11:72:example/lib/pages/page_list.dart
+```dart 11:72:example/lib/pages/page_list.dart
 class ListPage extends StatelessWidget {
   static const String name = 'list';
 
@@ -93,7 +93,7 @@ class ListPage extends StatelessWidget {
 
 `ListItem` 是列表项组件，展示文章预览：
 
-```275:325:example/lib/components/blog.dart
+```dart 275:325:example/lib/components/blog.dart
 class ListItem extends StatelessWidget {
   // TODO replace with Post item model.
   final String title;
@@ -159,7 +159,7 @@ class ListItem extends StatelessWidget {
 
 `PostPage` 展示了文章详情页的布局：
 
-```6:100:example/lib/pages/page_post.dart
+```dart 6:100:example/lib/pages/page_post.dart
 class PostPage extends StatelessWidget {
   static const String name = 'post';
 
@@ -237,7 +237,7 @@ class PostPage extends StatelessWidget {
 
 `PostPage` 使用了自定义断点配置：
 
-```66:70:example/lib/main.dart
+```dart 66:70:example/lib/main.dart
               const ResponsiveBreakpoints(breakpoints: [
                 Breakpoint(start: 0, end: 480, name: MOBILE),
                 Breakpoint(start: 481, end: 1200, name: TABLET),
@@ -255,7 +255,7 @@ class PostPage extends StatelessWidget {
 
 1. **ImageWrapper**：响应式图片包装器
 
-```10:29:example/lib/components/blog.dart
+```dart 10:29:example/lib/components/blog.dart
 class ImageWrapper extends StatelessWidget {
   final String image;
 
@@ -286,7 +286,7 @@ class ImageWrapper extends StatelessWidget {
 
 2. **TagWrapper**：标签容器
 
-```31:46:example/lib/components/blog.dart
+```dart 31:46:example/lib/components/blog.dart
 class TagWrapper extends StatelessWidget {
   final List<Tag> tags;
 
@@ -312,7 +312,7 @@ class TagWrapper extends StatelessWidget {
 
 3. **authorSection**：作者信息区域
 
-```139:185:example/lib/components/blog.dart
+```dart 139:185:example/lib/components/blog.dart
 List<Widget> authorSection({String? imageUrl, String? name, String? bio}) {
   return [
     divider,
@@ -374,7 +374,7 @@ List<Widget> authorSection({String? imageUrl, String? name, String? bio}) {
 
 `TypographyPage` 展示了字体样式和排版规范：
 
-```6:104:example/lib/pages/page_typography.dart
+```dart 6:104:example/lib/pages/page_typography.dart
 class TypographyPage extends StatelessWidget {
   static const String name = 'typography';
 
@@ -449,7 +449,7 @@ class TypographyPage extends StatelessWidget {
 
 示例项目通过扩展方法简化了 Sliver 的使用：
 
-```16:27:example/lib/utils/max_width_extension.dart
+```dart 16:27:example/lib/utils/max_width_extension.dart
   List<Widget> toMaxWidthSliver() {
     return map(
       (item) => SliverToBoxAdapter(
@@ -526,4 +526,3 @@ class TypographyPage extends StatelessWidget {
 ### 下一步
 
 准备好后，让我们进入第 6 章，学习组件设计模式与最佳实践。
-

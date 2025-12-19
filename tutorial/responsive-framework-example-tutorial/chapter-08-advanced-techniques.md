@@ -10,7 +10,7 @@
 
 `ResponsiveUtils` 提供了断点比较函数：
 
-```7:10:lib/src/utils/responsive_utils.dart
+```dart 7:10:lib/src/utils/responsive_utils.dart
   /// Comparator function to order [Breakpoint]s from small to large by start sections.
   static int breakpointComparator(Breakpoint a, Breakpoint b) {
     return a.start.compareTo(b.start);
@@ -23,7 +23,7 @@
 
 `ResponsiveUtils` 提供了调试日志功能：
 
-```12:50:lib/src/utils/responsive_utils.dart
+```dart 12:50:lib/src/utils/responsive_utils.dart
   /// Print a visual view of [breakpoints]
   /// for debugging purposes.
   static String debugLogBreakpoints(List<Breakpoint>? breakpoints) {
@@ -77,7 +77,7 @@ ResponsiveBreakpoints.builder(
 
 **输出示例**：
 
-```
+```text
 | 0 ----- (MOBILE) ----- 450 ----- 451 ----- (TABLET) ----- 800 ----- 801 ----- (DESKTOP) ----- 1920 ----- 1921 ----- (4K) ----- ∞ |
 ```
 
@@ -113,7 +113,7 @@ MaterialApp(
 
 示例项目中的 `ImageWrapper` 可以进一步优化：
 
-```10:29:example/lib/components/blog.dart
+```dart 10:29:example/lib/components/blog.dart
 class ImageWrapper extends StatelessWidget {
   final String image;
 
@@ -498,4 +498,3 @@ Widget buildLayout(BuildContext context) {
 4. **持续学习**：关注 Flutter Web 的最新发展
 
 祝你学习愉快，构建出优秀的响应式应用！
-

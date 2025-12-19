@@ -10,7 +10,7 @@
 
 `Routes` 类封装了路由的创建逻辑：
 
-```1:30:example/lib/routes.dart
+```dart 1:30:example/lib/routes.dart
 import 'package:animations/animations.dart';
 import 'package:flutter/widgets.dart';
 
@@ -65,7 +65,7 @@ class Routes {
 
 在 `main.dart` 中配置路由：
 
-```24:48:example/lib/main.dart
+```dart 24:48:example/lib/main.dart
     return MaterialApp(
       // Wrapping the app with a builder method makes breakpoints
       // accessible throughout the widget tree.
@@ -104,7 +104,7 @@ class Routes {
 
 ### 实现分析
 
-```51:75:example/lib/main.dart
+```dart 51:75:example/lib/main.dart
   // onGenerateRoute route switcher.
   // Navigate using the page name, `Navigator.pushNamed(context, ListPage.name)`.
   Route<dynamic> buildPage(
@@ -160,7 +160,7 @@ switch (pathName) {
 
 在 `main.dart` 中配置 URL 策略：
 
-```9:17:example/lib/main.dart
+```dart 9:17:example/lib/main.dart
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -228,7 +228,7 @@ Navigator.pushNamedAndRemoveUntil(
 
 ### 在组件中使用
 
-```318:318:example/lib/components/blog.dart
+```dart 318:318:example/lib/components/blog.dart
               onPressed: () => Navigator.pushNamed(context, PostPage.name),
 ```
 
@@ -385,4 +385,3 @@ _ => const SizedBox.shrink(),  // 显示空页面
 ### 下一步
 
 准备好后，让我们进入第 8 章，学习高级技巧与性能优化。
-

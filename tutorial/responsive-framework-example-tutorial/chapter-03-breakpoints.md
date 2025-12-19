@@ -10,7 +10,7 @@
 
 让我们先分析 `Breakpoint` 类的实现：
 
-```1:40:lib/src/breakpoint.dart
+```dart 1:40:lib/src/breakpoint.dart
 import 'package:flutter/material.dart';
 
 @immutable
@@ -75,7 +75,7 @@ const Breakpoint(start: 0, end: 450, name: MOBILE)
 
 ResponsiveFramework 定义了标准断点名称常量：
 
-```277:281:lib/src/responsive_breakpoints.dart
+```dart 277:281:lib/src/responsive_breakpoints.dart
 // Device Type Constants.
 const String MOBILE = 'MOBILE';
 const String TABLET = 'TABLET';
@@ -95,7 +95,7 @@ const String DESKTOP = 'DESKTOP';
 
 `ResponsiveBreakpointsState` 管理断点系统的核心状态：
 
-```106:176:lib/src/responsive_breakpoints.dart
+```dart 106:176:lib/src/responsive_breakpoints.dart
 class ResponsiveBreakpointsState extends State<ResponsiveBreakpoints>
     with WidgetsBindingObserver {
   double windowWidth = 0;
@@ -180,7 +180,7 @@ class ResponsiveBreakpointsState extends State<ResponsiveBreakpoints>
 
 `setDimensions()` 方法负责计算当前活动的断点：
 
-```168:176:lib/src/responsive_breakpoints.dart
+```dart 168:176:lib/src/responsive_breakpoints.dart
   /// Calculate updated dimensions.
   void setDimensions() {
     windowWidth = getWindowWidth();
@@ -204,7 +204,7 @@ class ResponsiveBreakpointsState extends State<ResponsiveBreakpoints>
 
 `ResponsiveBreakpointsState` 实现了完整的生命周期管理：
 
-```201:251:lib/src/responsive_breakpoints.dart
+```dart 201:251:lib/src/responsive_breakpoints.dart
   @override
   void initState() {
     super.initState();
@@ -270,7 +270,7 @@ class ResponsiveBreakpointsState extends State<ResponsiveBreakpoints>
 
 `ResponsiveBreakpointsData` 封装了所有可查询的响应式信息：
 
-```283:333:lib/src/responsive_breakpoints.dart
+```dart 283:333:lib/src/responsive_breakpoints.dart
 /// Responsive data about the current screen.
 ///
 /// Resized and scaled values can be accessed
@@ -324,7 +324,7 @@ class ResponsiveBreakpointsData {
 
 #### equals：精确匹配
 
-```336:336:lib/src/responsive_breakpoints.dart
+```dart 336:336:lib/src/responsive_breakpoints.dart
   bool equals(String name) => breakpoint.name == name;
 ```
 
@@ -338,7 +338,7 @@ if (ResponsiveBreakpoints.of(context).equals(DESKTOP)) {
 
 #### largerThan：大于判断
 
-```338:343:lib/src/responsive_breakpoints.dart
+```dart 338:343:lib/src/responsive_breakpoints.dart
   /// Is the [screenWidth] larger than [name]?
   /// Defaults to false if the [name] cannot be found.
   bool largerThan(String name) =>
@@ -359,7 +359,7 @@ if (ResponsiveBreakpoints.of(context).largerThan(MOBILE)) {
 
 #### smallerThan：小于判断
 
-```352:357:lib/src/responsive_breakpoints.dart
+```dart 352:357:lib/src/responsive_breakpoints.dart
   /// Is the [screenWidth] smaller than the [name]?
   /// Defaults to false if the [name] cannot be found.
   bool smallerThan(String name) =>
@@ -378,7 +378,7 @@ if (ResponsiveBreakpoints.of(context).smallerThan(TABLET)) {
 
 #### between：范围判断
 
-```366:379:lib/src/responsive_breakpoints.dart
+```dart 366:379:lib/src/responsive_breakpoints.dart
   /// Is the [screenWidth] smaller than or equal to the [name]?
   /// Defaults to false if the [name] cannot be found.
   bool between(String name, String name1) {
@@ -424,7 +424,7 @@ ResponsiveBreakpoints.of(context).isPhone;    // 是否是手机
 
 在示例项目中，`PostPage` 使用了自定义断点：
 
-```66:70:example/lib/main.dart
+```dart 66:70:example/lib/main.dart
               const ResponsiveBreakpoints(breakpoints: [
                 Breakpoint(start: 0, end: 480, name: MOBILE),
                 Breakpoint(start: 481, end: 1200, name: TABLET),
@@ -457,7 +457,7 @@ ResponsiveBreakpoints.of(context).isPhone;    // 是否是手机
 
 `ResponsiveBreakpoints` 支持为横竖屏配置不同的断点：
 
-```14:23:lib/src/responsive_breakpoints.dart
+```dart 14:23:lib/src/responsive_breakpoints.dart
   /// A list of breakpoints that are active when the device is in landscape orientation.
   ///
   /// In Flutter, the returned device orientation is not the real device orientation,
@@ -490,7 +490,7 @@ ResponsiveBreakpoints.builder(
 
 `useShortestSide` 选项允许基于最短边计算断点：
 
-```31:51:lib/src/responsive_breakpoints.dart
+```dart 31:51:lib/src/responsive_breakpoints.dart
   /// Calculate responsiveness based on the shortest
   /// side of the screen, instead of the actual
   /// landscape orientation.
@@ -566,4 +566,3 @@ T getResponsiveValue<T>(BuildContext context, {
 ### 下一步
 
 准备好后，让我们进入第 4 章，深入学习响应式组件的使用和实现。
-

@@ -95,6 +95,7 @@ Minimal Website 是一个极简风格的博客和作品集网站模板，展示�
 在 ResponsiveFramework 出现之前，开发者通常使用以下方法实现响应式设计：
 
 1. **MediaQuery 手动判断**
+
    ```dart
    if (MediaQuery.of(context).size.width > 800) {
      // 桌面布局
@@ -102,9 +103,11 @@ Minimal Website 是一个极简风格的博客和作品集网站模板，展示�
      // 移动端布局
    }
    ```
+
    问题：代码重复，难以维护
 
 2. **LayoutBuilder 组合**
+
    ```dart
    LayoutBuilder(
      builder: (context, constraints) {
@@ -115,6 +118,7 @@ Minimal Website 是一个极简风格的博客和作品集网站模板，展示�
      },
    )
    ```
+
    问题：逻辑分散，难以统一管理
 
 3. **多套布局文件**
@@ -194,4 +198,3 @@ ResponsiveFramework 通过以下方式解决了上述问题：
 ### 下一步
 
 准备好后，让我们进入第 2 章，深入了解项目的结构和初始化配置。
-

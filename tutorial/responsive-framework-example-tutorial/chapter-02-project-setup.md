@@ -10,7 +10,7 @@
 
 示例项目的目录结构清晰地体现了 Flutter 项目的最佳实践：
 
-```
+```text
 example/
 ├── lib/                    # 主要代码目录
 │   ├── components/         # 可复用组件
@@ -52,7 +52,7 @@ example/
 
 让我们详细分析 `pubspec.yaml` 文件的配置：
 
-```yaml:example/pubspec.yaml
+```yaml
 name: minimal
 description: A minimalistic Flutter website template for blogs and portfolios.
 version: 2.1.1
@@ -72,7 +72,7 @@ environment:
 
 ### 核心依赖
 
-```yaml:example/pubspec.yaml
+```yaml
 dependencies:
   flutter:
     sdk: flutter
@@ -105,7 +105,7 @@ dependencies:
 
 ### 开发依赖
 
-```yaml:example/pubspec.yaml
+```yaml
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -125,7 +125,7 @@ dev_dependencies:
 
 让我们逐行分析 `main.dart` 文件：
 
-```1:17:example/lib/main.dart
+```dart 1:17:example/lib/main.dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
@@ -158,7 +158,7 @@ void main() {
 
 ### MyApp 类分析
 
-```19:49:example/lib/main.dart
+```dart 19:49:example/lib/main.dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -212,7 +212,7 @@ class MyApp extends StatelessWidget {
 
 ### 路由构建方法
 
-```51:75:example/lib/main.dart
+```dart 51:75:example/lib/main.dart
   // onGenerateRoute route switcher.
   // Navigate using the page name, `Navigator.pushNamed(context, ListPage.name)`.
   Route<dynamic> buildPage(
@@ -280,6 +280,7 @@ class MyApp extends StatelessWidget {
 ### 断点配置最佳实践
 
 1. **断点范围设计**
+
    ```dart
    // 推荐：断点之间不重叠，覆盖所有尺寸
    const Breakpoint(start: 0, end: 450, name: MOBILE),
@@ -347,4 +348,3 @@ breakpoints: [
 ### 下一步
 
 准备好后，让我们进入第 3 章，深入解析断点系统的实现原理。
-

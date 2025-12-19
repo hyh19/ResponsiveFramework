@@ -10,7 +10,7 @@
 
 `MinimalMenuBar` 展示了响应式导航栏的实现：
 
-```335:430:example/lib/components/blog.dart
+```dart 335:430:example/lib/components/blog.dart
 // ignore: slash_for_doc_comments
 /**
  * Menu/Navigation Bar
@@ -143,7 +143,7 @@ class MinimalMenuBar extends StatelessWidget {
 
 示例项目将文本样式封装为独立组件：
 
-```7:56:example/lib/components/text.dart
+```dart 7:56:example/lib/components/text.dart
 class TextBody extends StatelessWidget {
   final String text;
 
@@ -224,7 +224,7 @@ final TextStyle subtitleTextStyle = ...;
 
 ### 间距常量
 
-```1:10:example/lib/components/spacing.dart
+```dart 1:10:example/lib/components/spacing.dart
 import 'package:flutter/painting.dart';
 
 // Margin
@@ -244,7 +244,7 @@ const EdgeInsets paddingBottom24 = EdgeInsets.only(bottom: 24);
 
 ### 颜色常量
 
-```1:6:example/lib/components/color.dart
+```dart 1:6:example/lib/components/color.dart
 import 'package:flutter/material.dart';
 
 // Text
@@ -264,7 +264,7 @@ const Color textSecondary = Color(0xFF3A3A3A);
 
 示例项目使用扩展方法简化代码：
 
-```4:27:example/lib/utils/max_width_extension.dart
+```dart 4:27:example/lib/utils/max_width_extension.dart
 extension MaxWidthExtension on List<Widget> {
   List<Widget> toMaxWidth() {
     return map(
@@ -330,7 +330,7 @@ List<Widget> widgets = [widget1, widget2].toMaxWidthSliver();
 
 ### 组件结构
 
-```275:325:example/lib/components/blog.dart
+```dart 275:325:example/lib/components/blog.dart
 class ListItem extends StatelessWidget {
   // TODO replace with Post item model.
   final String title;
@@ -397,7 +397,7 @@ class ListItem extends StatelessWidget {
 
 示例项目使用函数返回组件列表：
 
-```139:185:example/lib/components/blog.dart
+```dart 139:185:example/lib/components/blog.dart
 List<Widget> authorSection({String? imageUrl, String? name, String? bio}) {
   return [
     divider,
@@ -552,4 +552,3 @@ class MinimalMenuBar extends StatelessWidget {
 ### 下一步
 
 准备好后，让我们进入第 7 章，学习路由与导航系统的实现。
-
